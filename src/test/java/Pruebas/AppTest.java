@@ -28,7 +28,7 @@ public class AppTest
 	}
 	
     @Test
-    public void shouldAnswerWithTrue()
+    public void firstTest()
     {
        
        driver.findElement(By.id("autosuggest")).sendKeys("Ha");
