@@ -7,9 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -18,14 +23,14 @@ public class AppTest
 	WebDriver driver;
 		
 	@BeforeTest
-	public void setup() {
+	public void setup(){
+		
 		WebDriverManager.chromedriver().setup();
-	       
-       ChromeOptions options = new ChromeOptions();
-       options.addArguments("--handles");
-       driver = new ChromeDriver(options); 
-       driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-       driver.manage().window().maximize();
+		ChromeOptions option1 = new ChromeOptions();
+		option1.addArguments("--handles");
+		driver = new ChromeDriver(option1);
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+	    driver.manage().window().maximize();
 	}
 	
     @Test
