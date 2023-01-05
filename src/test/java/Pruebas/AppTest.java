@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -28,7 +29,7 @@ public class AppTest
 	}
 	
     @Test
-    public void firstTest()
+    public void selectHaiti()
     {
        
        driver.findElement(By.id("autosuggest")).sendKeys("Ha");
@@ -47,6 +48,32 @@ public class AppTest
 			}
 		}
     }
+    @Test
+	public void verifRadioButton(){
+		WebElement oneWay = driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_0"));
+		WebElement	round_Trip = driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1"));
+		round_Trip.click();
+		if (oneWay.isSelected()) {
+			WebElement Date = driver.findElement(By.xpath("//div/span[@class='date-close-disabled']"));
+			Assert.assertTrue(Date.isEnabled(),"Los campos asociados a la fecha deben estar deshabilitados cuando se selecciona la opción One Way");
+		} else if (round_Trip.isSelected()) {
+				WebElement Date = driver.findElement(By.xpath("//div/span[@class='date-close']"));
+				Assert.assertTrue(Date.isEnabled(),"Los campos asociados a la fecha deben estar habilitados cuando se selecciona la opción Round Trip");
+		}
+	}
+    
+	@Test
+	public void fromTo(){
+		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
+		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR']//a[@value='BLR']")).click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR']//a[@text='Hubli (HBX)']")).click();
+	}
     
     @AfterTest
     public void After() {
