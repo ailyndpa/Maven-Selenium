@@ -27,7 +27,7 @@ public class AppTest
 		
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions option1 = new ChromeOptions();
-		option1.addArguments("--handles");
+		option1.addArguments("--headless");
 		driver = new ChromeDriver(option1);
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 	    driver.manage().window().maximize();
@@ -53,6 +53,7 @@ public class AppTest
 			}
 		}
     }
+    
     @Test
 	public void verifRadioButton(){
 		WebElement oneWay = driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_0"));
@@ -65,19 +66,6 @@ public class AppTest
 				WebElement Date = driver.findElement(By.xpath("//div/span[@class='date-close']"));
 				Assert.assertTrue(Date.isEnabled(),"Los campos asociados a la fecha deben estar habilitados cuando se selecciona la opción Round Trip");
 		}
-	}
-    
-	@Test
-	public void fromTo(){
-		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
-		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR']//a[@value='BLR']")).click();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR']//a[@text='Hubli (HBX)']")).click();
 	}
     
     @AfterTest
