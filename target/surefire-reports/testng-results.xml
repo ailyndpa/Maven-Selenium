@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="20545" started-at="2023-01-17T14:48:19Z" finished-at="2023-01-17T14:48:39Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="20545" started-at="2023-01-17T14:48:19Z" finished-at="2023-01-17T14:48:39Z">
+      <class name="Pruebas.AppTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Pruebas.AppTest@1e88b3c]" name="setup" is-config="true" duration-ms="10090" started-at="2023-01-17T14:48:19Z" finished-at="2023-01-17T14:48:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="selectHaiti()[pri:0, instance:Pruebas.AppTest@1e88b3c]" name="selectHaiti" duration-ms="10215" started-at="2023-01-17T14:48:29Z" finished-at="2023-01-17T14:48:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectHaiti -->
+        <test-method status="PASS" signature="verifRadioButton()[pri:0, instance:Pruebas.AppTest@1e88b3c]" name="verifRadioButton" duration-ms="135" started-at="2023-01-17T14:48:39Z" finished-at="2023-01-17T14:48:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifRadioButton -->
+        <test-method status="PASS" signature="After()[pri:0, instance:Pruebas.AppTest@1e88b3c]" name="After" is-config="true" duration-ms="68" started-at="2023-01-17T14:48:39Z" finished-at="2023-01-17T14:48:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- After -->
+      </class> <!-- Pruebas.AppTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
